@@ -1,0 +1,203 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = StudentsManagement.Client
+build_property.RootNamespace = StudentsManagement.Client
+build_property.ProjectDir = D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement.Client
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/AcademicYears/AcademicYearsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhZGVtaWNZZWFyc1xBY2FkZW1pY1llYXJzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/AcademicYears/AddAcademicYear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhZGVtaWNZZWFyc1xBZGRBY2FkZW1pY1llYXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/AcademicYears/EditAcademicYear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNhZGVtaWNZZWFyc1xFZGl0QWNhZGVtaWNZZWFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Auth.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/BooksIssuance/AddNewBookIssuance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NJc3N1YW5jZVxBZGROZXdCb29rSXNzdWFuY2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/BooksIssuance/BooksIssuanceList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NJc3N1YW5jZVxCb29rc0lzc3VhbmNlTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/BooksIssuance/EditBookIssuance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NJc3N1YW5jZVxFZGl0Qm9va0lzc3VhbmNlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/BooksIssuance/ReturnBook.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NJc3N1YW5jZVxSZXR1cm5Cb29rLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/BooksIssuance/ReturnedBooksList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NJc3N1YW5jZVxSZXR1cm5lZEJvb2tzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Books/AddBook.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NcQWRkQm9vay5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Books/BooksList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NcQm9va3NMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Books/EditBook.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NcRWRpdEJvb2sucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Countries/AddCountry.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRyaWVzXEFkZENvdW50cnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Countries/CountriesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRyaWVzXENvdW50cmllc0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Countries/DeleteCountry.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRyaWVzXERlbGV0ZUNvdW50cnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Countries/EditCountry.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRyaWVzXEVkaXRDb3VudHJ5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Departments/AddDepartment.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudHNcQWRkRGVwYXJ0bWVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Departments/DepartmentsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudHNcRGVwYXJ0bWVudHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Departments/EditDepartment.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVwYXJ0bWVudHNcRWRpdERlcGFydG1lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Grades/AddNewGrade.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JhZGVzXEFkZE5ld0dyYWRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Grades/GradesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JhZGVzXEdyYWRlc0xpc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Grades/UpdateGrade.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR3JhZGVzXFVwZGF0ZUdyYWRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Parents/AddParent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFyZW50c1xBZGRQYXJlbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Parents/EditParent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFyZW50c1xFZGl0UGFyZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Parents/ParentList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFyZW50c1xQYXJlbnRMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Students/AddNewStudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcQWRkTmV3U3R1ZGVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Students/DeleteStudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRGVsZXRlU3R1ZGVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Students/EditStudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRWRpdFN0dWRlbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Students/StudentsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcU3R1ZGVudHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Subjects/AddSubject.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViamVjdHNcQWRkU3ViamVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Subjects/EditSubject.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViamVjdHNcRWRpdFN1YmplY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Subjects/SubjectsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViamVjdHNcU3ViamVjdHNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/SystemCodeDetails/AddSystemCodeDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3lzdGVtQ29kZURldGFpbHNcQWRkU3lzdGVtQ29kZURldGFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/SystemCodeDetails/SystemCodesDetailsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3lzdGVtQ29kZURldGFpbHNcU3lzdGVtQ29kZXNEZXRhaWxzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/SystemCodes/AddSystemCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3lzdGVtQ29kZXNcQWRkU3lzdGVtQ29kZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/SystemCodes/EditSystemCodes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3lzdGVtQ29kZXNcRWRpdFN5c3RlbUNvZGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/SystemCodes/SystemCodesList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3lzdGVtQ29kZXNcU3lzdGVtQ29kZXNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Teachers/AddTeacher.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcQWRkVGVhY2hlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Teachers/EditTeacher.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcRWRpdFRlYWNoZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Teachers/TeachersList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlcnNcVGVhY2hlcnNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Users/AddNewUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQWRkTmV3VXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Users/UsersList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcVXNlcnNMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = UmVkaXJlY3RUb0xvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

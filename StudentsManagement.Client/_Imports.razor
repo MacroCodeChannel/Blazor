@@ -1,0 +1,26 @@
+﻿@using System.Net.Http
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using static Microsoft.AspNetCore.Components.Web.RenderMode
+@using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.JSInterop
+@using StudentsManagement.Client
+@using StudentsManagement.Client.Repository
+@using StudentsManagement.Client.Interfaces
+@inject IStudentRepository StudentService
+@inject ICountryRepository CountryService
+@inject ISystemCodeDetailRepository SystemCodeDetailService
+@inject ISystemCodeRepository SystemCodeService
+@inject IParentRepository ParentService
+@inject ITeacherRepository TeacherService
+@inject ISubjectRepository SubjectService
+@inject IBookRepository BookService
+@inject IDepartmentRepository DepartmentService
+@inject IBooksIssuanceRepository IssuanceService
+@inject IAcademicYearRepository AcademicService
+@inject IUserRepository UserService
+@inject IGradeRepository GradesService
+@inject IGenericRepository GenericService

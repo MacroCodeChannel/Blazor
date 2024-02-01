@@ -1,0 +1,93 @@
+﻿@page "/grades-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@rendermode InteractiveServer
+@inject IJSRuntime JsRuntime
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Grades List</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p><a class="btn btn-success float-end" href="/add-grade">Add New Grade</a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllGrades.Any())
+                            {
+                                <p><em>Loading Grades...</em></p>
+                            }
+                            @if (AllGrades.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Grade Code</th>
+                                                <th>Grade Name</th>
+                                                <th>Grade Point</th>
+                                                <th>Mark From</th>
+                                                <th>Mark To</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var grade in AllGrades)
+                                            {
+                                                <tr>
+                                                    <td>@grade.Id</td>
+                                                    <td>@grade.GradeCode</td>
+                                                    <td>@grade.GradeName</td>
+                                                    <td>@grade.GradePoint</td>
+                                                    <td>@grade.MarkFrom</td>
+                                                    <td>@grade.MarkTo</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/grade/edit/@grade.Id"> Edit </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-danger" href="/grade/delete/@grade.Id"> Delete </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Grades List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public List<Grade> AllGrades { get; set; } = new();
+
+    public Grade country = new Grade();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllGrades();
+    }
+    public async Task LoadAllGrades()
+    {
+       
+        var data = await GenericService.GetAllAsync<Grade>();
+
+        if (data is null) return;
+
+        AllGrades.Clear();
+
+        AllGrades.AddRange(data);
+        
+    }
+}

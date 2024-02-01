@@ -1,0 +1,91 @@
+﻿@page "/users-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">System Users List</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p><a class="btn btn-success float-end" href="/add-user">Add New System User</a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllUsers.Any())
+                            {
+                                <p><em>Loading System Users...</em></p>
+                            }
+                            @if (AllUsers.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Full Name</th>
+                                                <th>User Name</th>
+                                                <th>Phone Number</th>
+                                                <th>Gender</th>
+                                                <th>Last Activity</th>
+                                                <th>Edit</th>
+                                                <th>View</th>
+                                                <th>Password</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var user in AllUsers)
+                                            {
+                                                <tr>
+                                                    <td>@user.FullName</td>
+                                                    <td>@user.UserName</td>
+                                                    <td>@user.PhoneNumber</td>
+                                                    <td>@user.Gender.Description</td>
+                                                    <td>@user.LastActivityDate</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/academicyear/edit/@user.Id"> Edit </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-danger" href="/academicyear/delete/@user.Id"> View </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-primary" href="/academicyear/delete/@user.Id"> Password </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Users List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public List<ApplicationUser> AllUsers { get; set; } = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllUsers();
+    }
+    public async Task LoadAllUsers()
+    {
+        var data = await UserService.GetAllAsync();
+
+        if (data is null) return;
+
+        AllUsers.Clear();
+
+        AllUsers.AddRange(data);
+    }
+}

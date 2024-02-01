@@ -1,0 +1,104 @@
+﻿@page "/add-grade"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization
+@inject UserManager<ApplicationUser> usermanager;
+@attribute [Authorize]
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Add New Grades</h3>
+            </div>
+            <div class="card-body">
+                <EditForm Model="gradeobject" OnValidSubmit="CreateGrade" FormName="gradedetails">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Grade Code</label>
+                                    <InputText for="GradeCode" class="form-control" @bind-Value="@gradeobject.GradeCode" />
+                                    <ValidationMessage For="()=>gradeobject.GradeCode" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Grade Name</label>
+                                    <InputText for="GradeName" class="form-control" @bind-Value="@gradeobject.GradeName" />
+                                    <ValidationMessage For="()=>gradeobject.GradeName" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Grade Point</label>
+                                    <InputText for="GradePoint" class="form-control" @bind-Value="@gradeobject.GradePoint" />
+                                    <ValidationMessage For="()=>gradeobject.GradePoint" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Mark From</label>
+                                    <InputNumber for="MarkFrom" class="form-control" @bind-Value="@gradeobject.MarkFrom" />
+                                    <ValidationMessage For="()=>gradeobject.MarkFrom" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Mark To</label>
+                                    <InputNumber for="MarkTo" class="form-control" @bind-Value="@gradeobject.MarkTo" />
+                                    <ValidationMessage For="()=>gradeobject.MarkTo" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Notes</label>
+                                    <InputTextArea for="Notes" class="form-control" @bind-Value="@gradeobject.Notes" />
+                                    <ValidationMessage For="()=>gradeobject.Notes" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">Save Grade</button>
+                            <button type="button" @onclick="()=>Cancel()" class="btn btn-danger">Back to List</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [SupplyParameterFromForm]
+    public Grade gradeobject { get; set; } = new();
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationStateTask).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentuser = await usermanager.GetUserAsync(user);
+            UserId = currentuser.Id;
+        }
+    }
+
+    protected async Task CreateGrade()
+    {
+        gradeobject.CreatedOn = DateTime.Now;
+        gradeobject.CreatedById = UserId;
+        var result = GenericService.AddAsync(gradeobject);
+        navigation.NavigateTo("/grades-list");
+    }
+    public void Cancel()
+    {
+        navigation.NavigateTo("/grades-list");
+    }
+}

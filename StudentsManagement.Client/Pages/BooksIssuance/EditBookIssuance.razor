@@ -1,0 +1,143 @@
+﻿@page "/issuance/edit/{id:int}"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization
+@inject UserManager<ApplicationUser> usermanager;
+@attribute [Authorize]
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Update Parent Details</h3>
+            </div>
+            <div class="card-body">
+                <div class="col-md-12">
+                    <EditForm Model="issuanceobj" OnValidSubmit="UpdateBookIssuance" FormName="updatebookissuance">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Issue Date</label>
+                                        <InputDate for="IssueDate" class="form-control" @bind-Value="@issuanceobj.IssueDate" />
+                                        <ValidationMessage For="()=>issuanceobj.IssueDate" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Due Date</label>
+                                        <InputDate for="DueDate" class="form-control" @bind-Value="@issuanceobj.DueDate" />
+                                        <ValidationMessage For="()=>issuanceobj.DueDate" />
+                                    </div>
+
+                                </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Class</label>
+                                            <InputSelect for="ClassId" class="form-control" @bind-Value="@issuanceobj.ClassId">
+                                                <option value="">Select Class</option>
+                                                @if (Class != null && Class.Any())
+                                                {
+                                                    @foreach (var item in Class)
+                                                    {
+                                                        <option value="@item.Id">@item.Description</option>
+                                                    }
+                                                }
+                                            </InputSelect>
+                                            <ValidationMessage For="()=>issuanceobj.ClassId" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Student</label>
+                                            <InputSelect for="StudentId" class="form-control" @bind-Value="@issuanceobj.StudentId">
+                                                <option value="">Select Student</option>
+                                                @foreach (var student in Students)
+                                                {
+                                                    <option value="@student.Id">@student.FullName</option>
+                                                }
+                                            </InputSelect>
+                                            <ValidationMessage For="()=>issuanceobj.StudentId" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Book Type</label>
+                                            <InputSelect for="BookId" class="form-control" @bind-Value="@issuanceobj.BookId">
+                                                <option value="">Select Book Type</option>
+                                                @foreach (var type in Books)
+                                                {
+                                                    <option value="@type.Id">@type.Name</option>
+                                                }
+                                            </InputSelect>
+                                            <ValidationMessage For="()=>issuanceobj.BookId" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Notes</label>
+                                            <InputTextArea for="DOB" class="form-control" @bind-Value="@issuanceobj.Notes" />
+                                            <ValidationMessage For="()=>issuanceobj.Notes" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <button type="submit" class="btn btn-primary">Save Issuance History</button>
+                                    <button type="button" @onclick="()=>Cancel()" class="btn btn-danger">Back to List</button>
+                                </div>
+                            </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+
+    [SupplyParameterFromForm]
+    public BookIssuance issuanceobj { get; set; } = new();
+
+
+    [Parameter]
+    public int id { get; set; }
+
+    List<SystemCodeDetail> Class = new List<SystemCodeDetail>();
+
+    List<Book> Books = new List<Book>();
+
+    List<Student> Students = new List<Student>();
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationStateTask).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentuser = await usermanager.GetUserAsync(user);
+            UserId = currentuser.Id;
+        }
+
+        issuanceobj = await IssuanceService.GetByIdAsync(id);
+        Class = await SystemCodeDetailService.GetByCodeAsync("Class");
+        Books = await BookService.GetAllAsync();
+        Students = await StudentService.GetAllStudentsAsync();
+    }
+
+    protected async Task UpdateBookIssuance()
+    {
+        issuanceobj.CreatedById = UserId;
+        issuanceobj.CreatedOn = DateTime.Now;
+        var result = await IssuanceService.UpdateAsync(issuanceobj);
+        navigation.NavigateTo("/issuancehistory-list");
+    }
+    public void Cancel()
+    {
+        navigation.NavigateTo("/issuancehistory-list");
+    }
+}

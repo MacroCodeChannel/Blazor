@@ -1,0 +1,84 @@
+﻿@page "/department-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Departments List</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p><a class="btn btn-success float-end" href="/add-department">Add New Department</a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllDepartments.Any())
+                            {
+                                <p><em>Loading Departments...</em></p>
+                            }
+                            @if (AllDepartments.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Department Code</th>
+                                                <th>Department Name </th>
+                                                <th>Created By</th>
+                                                <th>Created On</th>
+                                                <th>Edit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var department in AllDepartments)
+                                            {
+                                                <tr>
+                                                    <td>@department.Id</td>
+                                                    <td>@department.Code</td>
+                                                    <td>@department.Name</td>
+                                                    <td>@department.CreatedBy.FullName</td>
+                                                    <td>@department.CreatedOn</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/department/edit/@department.Id"> Edit </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Department List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public List<Department> AllDepartments { get; set; } = new();
+
+    public Department department = new Department();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllDepartments();
+    }
+    public async Task LoadAllDepartments()
+    {
+        var data = await DepartmentService.GetAllAsync();
+
+        if (data is null) return;
+
+        AllDepartments.Clear();
+
+        AllDepartments.AddRange(data);
+    }
+}

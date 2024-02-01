@@ -1,0 +1,92 @@
+﻿@page "/issuancehistory-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Books Issuance History</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p><a class="btn btn-success float-end" href="/add-issuance"> Issue  New Book </a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllBookIssuanceHistory.Any())
+                            {
+                                <p><em>Loading Books Issuance History...</em></p>
+                            }
+                            @if (AllBookIssuanceHistory.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Book Name</th>
+                                                <th>Issue Date</th>
+                                                <th>Due Date</th>
+                                                <th>Class Name</th>
+                                                <th>Student Name</th>
+                                                <th>Status</th>
+                                                <th>Edit</th>
+                                                <th>Return</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var issue in AllBookIssuanceHistory)
+                                            {
+                                                <tr>
+                                                    <td>@issue.Book.Name</td>
+                                                    <td>@issue.IssueDate</td>
+                                                    <td>@issue.DueDate</td>
+                                                    <td>@issue.Class.Description</td>
+                                                    <td>@issue.Student.FullName</td>
+                                                    <td class="text-success">@issue.Status.Code</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/issuance/edit/@issue.Id"><i class="fa-solid fa-pencil"></i> Edit </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-warning" href="/return/edit/@issue.Id"><i class="fa-solid fa-arrow-rotate-left"></i> Return </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Book Issuance History List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+
+    public List<BookIssuance> AllBookIssuanceHistory { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllBookIssuanceHistory();
+    }
+
+    public async Task LoadAllBookIssuanceHistory()
+    {
+        var data = await IssuanceService.GetAllAsync();
+        var issuedbooks = data.Where(x => x.Status.Code == "Issued");
+        AllBookIssuanceHistory.Clear();
+
+        if (issuedbooks is null) return;
+        foreach (var item in issuedbooks)
+        {
+            AllBookIssuanceHistory.Add(item);
+        }
+    }
+
+}

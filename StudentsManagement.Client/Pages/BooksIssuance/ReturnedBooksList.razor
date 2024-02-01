@@ -1,0 +1,83 @@
+﻿@page "/returnedhistory-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Returned Books History</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllBookReturnHistory.Any())
+                            {
+                                <p><em>Loading Books Return History...</em></p>
+                            }
+                            @if (AllBookReturnHistory.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Issue Date</th>
+                                                <th>Due Date</th>
+                                                <th>Student Name</th>
+                                                <th>Book Name</th>
+                                                <th>Return Date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var issue in AllBookReturnHistory)
+                                            {
+                                                <tr>
+                                                    <td>@issue.IssueDate</td>
+                                                    <td>@issue.DueDate</td>
+                                                    <td>@issue.Student.FullName</td>
+                                                    <td>@issue.Book.Name</td>
+                                                    <td>@issue.ReturnDate</td>
+                                                    <td class="text-warning">@issue.Status.Code</td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Book Return History List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+
+    public List<BookIssuance> AllBookReturnHistory { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllBookIssuanceHistory();
+    }
+
+    public async Task LoadAllBookIssuanceHistory()
+    {
+        var data = await IssuanceService.GetAllAsync();
+        var returnedbooks = data.Where(x => x.Status.Code == "Returned");
+        AllBookReturnHistory.Clear();
+
+        if (returnedbooks is null) return;
+        foreach (var item in returnedbooks)
+        {
+            AllBookReturnHistory.Add(item);
+        }
+    }
+
+}

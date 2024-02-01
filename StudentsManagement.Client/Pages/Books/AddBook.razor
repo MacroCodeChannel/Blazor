@@ -1,0 +1,99 @@
+﻿@page "/add-book"
+@using StudentsManagement.Client.Models
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization
+@inject UserManager<ApplicationUser> usermanager;
+@attribute [Authorize]
+@inject NavigationManager navigation;
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Add New Book</h3>
+            </div>
+            <div class="card-body">
+                <EditForm Model="bookobject" OnValidSubmit="CreateBook" FormName="addbook">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Book Name</label>
+                                    <InputText for="Name" class="form-control" @bind-Value="@bookobject.Name" />
+                                    <ValidationMessage For="()=>bookobject.Name" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Book Auther</label>
+                                    <InputText for="Auther" class="form-control" @bind-Value="@bookobject.Auther" />
+                                    <ValidationMessage For="()=>bookobject.Auther" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">No of Copies</label>
+                                    <InputNumber for="NoOfCopy" class="form-control" @bind-Value="@bookobject.NoOfCopy" />
+                                    <ValidationMessage For="()=>bookobject.NoOfCopy" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Book Category</label>
+                                    <InputSelect for="BookCategoryId" class="form-control" @bind-Value="@bookobject.BookCategoryId">
+                                        <option value="">Select Category</option>
+                                        @foreach (var category in BookCategories)
+                                        {
+                                            <option value="@category.Id">@category.Description</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="()=>bookobject.BookCategoryId" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">Save Book</button>
+                            <button type="button" @onclick="()=>Cancel()" class="btn btn-danger">Back to List</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [SupplyParameterFromForm]
+    public Book bookobject { get; set; } = new();
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    List<SystemCodeDetail> BookCategories = new List<SystemCodeDetail>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationStateTask).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentuser = await usermanager.GetUserAsync(user);
+            UserId = currentuser.Id;
+        }
+        BookCategories = await SystemCodeDetailService.GetByCodeAsync("BookCategory");
+    }
+
+    protected async Task CreateBook()
+    {
+        bookobject.CreatedById = UserId;
+        bookobject.CreatedOn = DateTime.Now;
+        var result = BookService.AddAsync(bookobject);
+        navigation.NavigateTo("/books-list");
+    }
+    public void Cancel()
+    {
+        navigation.NavigateTo("/books-list");
+    }
+}

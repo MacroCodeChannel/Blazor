@@ -1,0 +1,86 @@
+﻿@page "/books-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+@inject IJSRuntime JsRuntime
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Books List</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p><a class="btn btn-success float-end" href="/add-book">Add New Book</a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllBooks.Any())
+                            {
+                                <p><em>Loading Books...</em></p>
+                            }
+                            @if (AllBooks.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Book Name</th>
+                                                <th>Book Auther</th>
+                                                <th>No of Copies</th>
+                                                <th>Category</th>
+                                                <th>Edit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var book in AllBooks)
+                                            {
+                                                <tr>
+                                                    <td>@book.Id</td>
+                                                    <td>@book.Name</td>
+                                                    <td>@book.Auther</td>
+                                                    <td>@book.NoOfCopy</td>
+                                                    <td>@book.BookCategory.Description</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/book/edit/@book.Id"> Edit </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Books List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public List<Book> AllBooks { get; set; } = new();
+
+    public Book book = new Book();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllBooks();
+    }
+    public async Task LoadAllBooks()
+    {
+        var data = await BookService.GetAllAsync();
+
+        if (data is null) return;
+
+        AllBooks.Clear();
+
+        AllBooks.AddRange(data);
+    }
+}

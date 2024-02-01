@@ -1,0 +1,104 @@
+﻿@page "/academicyear/edit/{id:int}"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization
+@inject UserManager<ApplicationUser> usermanager;
+@attribute [Authorize]
+@rendermode InteractiveServer
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Update Academic Year Details</h3>
+            </div>
+            <div class="card-body">
+                <EditForm Model="academicobj" OnValidSubmit="UpdateAcademicYear" FormName="UpdateAcademicDetails">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Academic Year</label>
+                                    <InputText for="Name" class="form-control" @bind-Value="@academicobj.Name" />
+                                    <ValidationMessage For="()=>academicobj.Name" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Start Date</label>
+                                    <InputDate for="StartDate" class="form-control" @bind-Value="@academicobj.StartDate" />
+                                    <ValidationMessage For="()=>academicobj.StartDate" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">End Date</label>
+                                    <InputDate for="EndDate" class="form-control" @bind-Value="@academicobj.EndDate" />
+                                    <ValidationMessage For="()=>academicobj.EndDate" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Notes</label>
+                                    <InputTextArea for="Notes" class="form-control" @bind-Value="@academicobj.Notes" />
+                                    <ValidationMessage For="()=>academicobj.Notes" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">Update Academic Year</button>
+                            <button type="button" @onclick="()=>Cancel()" class="btn btn-danger">Back to List</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+
+    [SupplyParameterFromForm]
+    public AcademicYear academicobj { get; set; } = new();
+
+    [Parameter]
+    public int id { get; set; }
+
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationStateTask).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentuser = await usermanager.GetUserAsync(user);
+            UserId = currentuser.Id;
+        }
+
+        await LoadAcademicYear();
+    }
+    public async Task LoadAcademicYear()
+    {
+        academicobj = await AcademicService.GetByIdAsync(id);
+    }
+
+
+    protected async Task UpdateAcademicYear()
+    {
+        academicobj.ModifiedById = UserId;
+        academicobj.ModifiedOn = DateTime.Now;
+        var result = AcademicService.UpdateAsync(academicobj);
+        navigation.NavigateTo("/academicyears-list");
+    }
+    public void Cancel()
+    {
+        navigation.NavigateTo("/academicyears-list");
+    }
+}
