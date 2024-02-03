@@ -86,7 +86,7 @@
     }
     public async Task LoadAcademicYear()
     {
-        academicobj = await AcademicService.GetByIdAsync(id);
+        academicobj = await GeneralService.GetByIdAsync<AcademicYear>(id);
     }
 
 
@@ -94,7 +94,7 @@
     {
         academicobj.ModifiedById = UserId;
         academicobj.ModifiedOn = DateTime.Now;
-        var result = AcademicService.UpdateAsync(academicobj);
+        var result = GeneralService.UpdateAsync<AcademicYear>(academicobj);
         navigation.NavigateTo("/academicyears-list");
     }
     public void Cancel()

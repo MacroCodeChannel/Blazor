@@ -89,7 +89,7 @@
     }
     public async Task LoadAllAcademicYears()
     {
-        var data = await AcademicService.GetAllAsync();
+        var data = await GeneralService.GetAllAsync<AcademicYear>();
 
         if (data is null) return;
 

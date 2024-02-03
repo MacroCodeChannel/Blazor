@@ -1,6 +1,8 @@
 ﻿@page "/add-student"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@rendermode InteractiveServer
+@inject IConfiguration config;
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.AspNetCore.Authorization
 @inject UserManager<ApplicationUser> usermanager;
@@ -101,6 +103,12 @@
                             <ValidationMessage For="()=>studobj.DOB" />
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label">Student Photo</label>
+                            <InputFile OnChange="@LoadUploadFile" class="form-control" accept=".png,.jpg,.jpeg" />
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mt-4">
                     <button type="submit" class="btn btn-primary">Save Student</button>
@@ -124,6 +132,41 @@
 
     public string UserId { get; set; }
 
+    public IBrowserFile? file;
+
+
+    private async Task LoadUploadFile(InputFileChangeEventArgs ergs)
+    {
+        file = ergs.File;
+    }
+
+
+    private async Task<string> UploadedFile()
+    {
+        if (file is null)
+        {
+            return string.Empty;
+        }
+        else
+        {
+            string filename = Path.ChangeExtension(
+            Path.GetRandomFileName(),
+            Path.GetExtension(file.Name));
+
+            string path = Path.Combine(config.GetValue<String>("FileUploads")!, "Students", filename);
+
+            string relativefilepath = Path.Combine("Students", filename);
+
+            Directory.CreateDirectory(Path.Combine(config.GetValue<String>("FileUploads")!, "Students"));
+
+            await using FileStream filestream = new(path, FileMode.Create);
+
+            await file.OpenReadStream().CopyToAsync(filestream);
+
+            return relativefilepath;
+        }
+    }
+
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
 
@@ -136,7 +179,7 @@
             UserId = currentuser.Id;
         }
 
-        Countries = await CountryService.GetAllAsync();
+        Countries = await GeneralService.GetAllAsync<Country>();
         Gender = await SystemCodeDetailService.GetByCodeAsync("Gender");
     }
 
@@ -144,6 +187,7 @@
     {
         studobj.CreatedById = UserId;
         studobj.CreatedOn = DateTime.Now;
+        studobj.Photo = await UploadedFile();
         var result = await StudentService.AddStudentAsync(studobj);
       
         navigation.NavigateTo("/students-list");

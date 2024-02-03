@@ -81,7 +81,7 @@
     public async Task LoadAllGrades()
     {
        
-        var data = await GenericService.GetAllAsync<Grade>();
+        var data = await GeneralService.GetAllAsync<Grade>();
 
         if (data is null) return;
 

@@ -32,5 +32,7 @@ namespace StudentsManagement.Client.Models
         public SystemCodeDetail ParentType { get; set; }
 
         public DateTime DOB { get; set; }
+
+        public int Photo { get; set; }
     }
 }

@@ -78,7 +78,7 @@
 
     public async Task LoadAllBookIssuanceHistory()
     {
-        var data = await IssuanceService.GetAllAsync();
+        var data = await GeneralService.GetAllAsync<BookIssuance>();
         var issuedbooks = data.Where(x => x.Status.Code == "Issued");
         AllBookIssuanceHistory.Clear();
 

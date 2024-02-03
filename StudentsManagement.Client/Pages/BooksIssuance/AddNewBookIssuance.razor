@@ -119,8 +119,8 @@
         }
 
         Class = await SystemCodeDetailService.GetByCodeAsync("Class");
-        Books = await BookService.GetAllAsync();
-        Students = await StudentService.GetAllStudentsAsync();
+        Books = await GeneralService.GetAllAsync<Book>();
+        Students = await GeneralService.GetAllAsync<Student>();
     }
 
 
@@ -129,7 +129,7 @@
         issuanceobj.CreatedById  =UserId;
         issuanceobj.CreatedOn = DateTime.Now;
         issuanceobj.ReturnDate = issuanceobj.DueDate.AddDays(1);
-        var result = await IssuanceService.AddAsync(issuanceobj);
+        var result = await GeneralService.AddAsync<BookIssuance>(issuanceobj);
         navigation.NavigateTo("/issuancehistory-list");
     }
     public void Cancel()

@@ -80,7 +80,7 @@
     {
         academicobj.CreatedOn = DateTime.Now;
         academicobj.CreatedById = UserId;
-        var result = AcademicService.AddAsync(academicobj);
+        var result = GeneralService.AddAsync<AcademicYear>(academicobj);
         navigation.NavigateTo("/academicyears-list");
     }
     public void Cancel()

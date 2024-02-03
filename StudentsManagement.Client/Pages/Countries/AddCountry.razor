@@ -66,7 +66,7 @@
     {
         countryobj.CreatedOn = DateTime.Now;
         countryobj.CreatedById = UserId;
-        var result = CountryService.AddAsync(countryobj);
+        var result = GeneralService.AddAsync<Country>(countryobj);
         navigation.NavigateTo("/countries-list");
     }
     public void Cancel()

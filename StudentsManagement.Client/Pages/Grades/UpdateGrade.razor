@@ -100,7 +100,7 @@
     }
     public async Task LoadGrade()
     {
-        gradeobject = await GradesService.GetByIdAsync(id);
+        gradeobject = await GeneralService.GetByIdAsync<Grade>(id);
     }
 
 
@@ -108,7 +108,7 @@
     {
         gradeobject.ModifiedById = UserId;
         gradeobject.ModifiedOn = DateTime.Now;
-        var result = GradesService.UpdateAsync(gradeobject);
+        var result = GeneralService.UpdateAsync<Grade>(gradeobject);
         navigation.NavigateTo("/grades-list");
     }
     public void Cancel()

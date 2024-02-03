@@ -81,13 +81,13 @@
     }
     public async Task LoadBook()
     {
-        bookobject = await BookService.GetByIdAsync(id);
+        bookobject = await GeneralService.GetByIdAsync<Book>(id);
     }
 
 
     protected async Task UpdateBook()
     {
-        var result = BookService.UpdateAsync(bookobject);
+        var result = GeneralService.UpdateAsync<Book>(bookobject);
         navigation.NavigateTo("/books-list");
     }
     public void Cancel()

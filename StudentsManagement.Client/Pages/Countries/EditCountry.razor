@@ -73,7 +73,7 @@
     }
     public async Task LoadCountry()
     {
-        countryobj = await CountryService.GetByIdAsync(id);
+        countryobj = await GeneralService.GetByIdAsync<Country>(id);
     }
 
 
@@ -81,7 +81,7 @@
     {
         countryobj.ModifiedById = UserId;
         countryobj.ModifiedOn = DateTime.Now;
-        var result = CountryService.UpdateAsync(countryobj);
+        var result = GeneralService.UpdateAsync<Country>(countryobj);
         navigation.NavigateTo("/countries-list");
     }
     public void Cancel()

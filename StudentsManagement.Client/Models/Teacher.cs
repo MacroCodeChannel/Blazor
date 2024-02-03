@@ -30,5 +30,6 @@ namespace StudentsManagement.Client.Models
         public string LinkedInLink { get; set; }
         public int DesignationId { get; set; }
         public SystemCodeDetail Designation { get; set; }
+        public string? Photo { get; set; }
     }
 }

@@ -129,18 +129,18 @@
         }
 
         
-        issuanceobj = await IssuanceService.GetByIdAsync(id);
+        issuanceobj = await GeneralService.GetByIdAsync<BookIssuance>(id);
         issuanceobj.ReturnDate = DateTime.Now;
         Class = await SystemCodeDetailService.GetByCodeAsync("Class");
-        Books = await BookService.GetAllAsync();
-        Students = await StudentService.GetAllStudentsAsync();
+        Books = await GeneralService.GetAllAsync<Book>();
+        Students = await GeneralService.GetAllAsync<Student>();
     }
 
     protected async Task ReturnBookIssuance()
     {
         issuanceobj.ModifiedById = UserId;
         issuanceobj.ModifiedOn = DateTime.Now;
-        var result = await IssuanceService.ReturnBookUpdateAsync(issuanceobj);
+        var result = await GeneralService.UpdateAsync<BookIssuance>(issuanceobj);
         navigation.NavigateTo("/issuancehistory-list");
     }
     public void Cancel()

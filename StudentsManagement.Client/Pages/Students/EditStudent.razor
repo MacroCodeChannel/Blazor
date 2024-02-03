@@ -134,7 +134,7 @@
     protected override async Task OnInitializedAsync()
     {
         await LoadStudent();
-        Countries = await CountryService.GetAllAsync();
+        Countries = await GeneralService.GetAllAsync<Country>();
         Gender = await SystemCodeDetailService.GetByCodeAsync("Gender");
     }
     public async Task LoadStudent()

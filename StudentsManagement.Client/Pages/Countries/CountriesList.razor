@@ -74,7 +74,7 @@
     }
     public async Task LoadAllCountries()
     {
-        var countries = await CountryService.GetAllAsync();
+        var countries = await GeneralService.GetAllAsync<Country>();
 
         if (countries is null) return;
 

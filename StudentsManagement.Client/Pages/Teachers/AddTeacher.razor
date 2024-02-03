@@ -1,8 +1,10 @@
 ﻿@page "/add-teacher"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@rendermode InteractiveServer
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.AspNetCore.Authorization
+@inject IConfiguration config
 @inject UserManager<ApplicationUser> usermanager;
 @attribute [Authorize]
 <div class="row">
@@ -134,6 +136,12 @@
                                         <ValidationMessage For="()=>teachobj.DOB" />
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Upload Photo</label>
+                                        <InputFile OnChange="@LoadFileUploads" class="form-control" accept =".png,.jpg,.jpeg" />
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group mt-4">
                                 <button type="submit" class="btn btn-primary">Save Teacher</button>
@@ -159,10 +167,44 @@
 
     public string UserId { get; set; }
 
+    public string FileName { get; set; }
+
+    public IBrowserFile? file;
+
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
 
 
+    private  async Task LoadFileUploads(InputFileChangeEventArgs ergs)
+    {
+        file = ergs.File;
+    }
+
+
+    private async Task<string> CaptureFile()
+    {
+        if (file is null)
+        {
+            return string.Empty;
+        }
+        else
+        {
+            FileName = Path.ChangeExtension(
+            Path.GetRandomFileName(),
+            Path.GetExtension(file.Name));
+
+            string path = Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode", FileName);
+
+            string relativefilename = Path.Combine("MacroCode", FileName);
+
+            Directory.CreateDirectory(Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode"));
+
+            await using FileStream fs = new(path, FileMode.Create);
+            await file.OpenReadStream().CopyToAsync(fs);
+
+            return relativefilename;
+        }
+    }
     protected override async Task OnInitializedAsync()
     {
         var user = (await authenticationStateTask).User;
@@ -180,6 +222,7 @@
     {
         teachobj.CreatedById = UserId;
         teachobj.CreatedOn = DateTime.Now;
+        teachobj.Photo = await CaptureFile(); ;
         var result = await TeacherService.AddAsync(teachobj);
         navigation.NavigateTo("/teachers-list");
     }

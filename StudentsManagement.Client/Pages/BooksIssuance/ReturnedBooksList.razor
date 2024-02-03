@@ -69,7 +69,7 @@
 
     public async Task LoadAllBookIssuanceHistory()
     {
-        var data = await IssuanceService.GetAllAsync();
+        var data = await GeneralService.GetAllAsync<BookIssuance>();
         var returnedbooks = data.Where(x => x.Status.Code == "Returned");
         AllBookReturnHistory.Clear();
 

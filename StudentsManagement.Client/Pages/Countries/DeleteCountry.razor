@@ -47,13 +47,14 @@
     }
     public async Task LoadCountry()
     {
-        countryobj = await CountryService.GetByIdAsync(id);
+        countryobj = await GeneralService.GetByIdAsync<Country>(id);
     }
 
 
     protected async Task Delete()
     {
-        var result = await CountryService.DeleteAsync(id);
+        var country = await GeneralService.GetByIdAsync<Country>(id);
+        var result = await GeneralService.DeleteAsync(country);
         navigation.NavigateTo("/countries-list");
     }
     public void Cancel()

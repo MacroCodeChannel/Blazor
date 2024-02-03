@@ -94,11 +94,12 @@
     {
         gradeobject.CreatedOn = DateTime.Now;
         gradeobject.CreatedById = UserId;
-        var result = GenericService.AddAsync(gradeobject);
+        var result = GeneralService.AddAsync<Grade>(gradeobject);
         navigation.NavigateTo("/grades-list");
     }
     public void Cancel()
     {
         navigation.NavigateTo("/grades-list");
     }
-}
+    }
+

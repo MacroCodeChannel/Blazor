@@ -89,7 +89,7 @@
     {
         bookobject.CreatedById = UserId;
         bookobject.CreatedOn = DateTime.Now;
-        var result = BookService.AddAsync(bookobject);
+        var result = GeneralService.AddAsync<Book>(bookobject);
         navigation.NavigateTo("/books-list");
     }
     public void Cancel()

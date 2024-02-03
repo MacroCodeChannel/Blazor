@@ -40,20 +40,14 @@ builder.Services.AddIdentity<ApplicationUser,ApplicationRole>(options => options
 builder.Services.AddSingleton<IEmailSender<ApplicationUser>, IdentityNoOpEmailSender>();
 
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
-builder.Services.AddScoped<ICountryRepository, CountryRespository>();
 builder.Services.AddScoped<ISystemCodeDetailRepository, SystemCodeDetailRepository>();
 builder.Services.AddScoped<ISystemCodeRepository, SystemCodeRepository>();
 builder.Services.AddScoped<IParentRepository, ParentRepository>();
 builder.Services.AddScoped<ITeacherRepository, TeacherRepository>();
 builder.Services.AddScoped<ISubjectRepository, SubjectRepository>();
-builder.Services.AddScoped<IBookRepository, BookRepository>();
-builder.Services.AddScoped(typeof(IGenericRepository), typeof(GenericRepository<ApplicationDbContext>));
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-builder.Services.AddScoped<IBooksIssuanceRepository, BooksIssuanceRepository>();
-builder.Services.AddScoped<IAcademicYearRepository, AcademicYearRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IGradeRepository, GradeRepository>();
-builder.Services.AddScoped<IUnitOfwork, UnitOfwork>();
+builder.Services.AddScoped(typeof(IGenericRepository),typeof(GenericRepository<ApplicationDbContext>));  
 
 builder.Services.AddScoped(http => new HttpClient
 {
