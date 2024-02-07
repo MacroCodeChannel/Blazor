@@ -1,0 +1,85 @@
+﻿@page "/hostels-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Hostels List</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p><a class="btn btn-success float-end" href="/add-hostel">Add New Hostel</a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllHostels.Any())
+                            {
+                                <p><em>Loading Hostels...</em></p>
+                            }
+                            @if (AllHostels.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Hostel Name</th>
+                                                <th>Hostel Address</th>
+                                                <th>Hostel Description</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var hostel in AllHostels)
+                                            {
+                                                <tr>
+                                                    <td>@hostel.Id</td>
+                                                    <td>@hostel.HostelName</td>
+                                                    <td>@hostel.Address</td>
+                                                    <td>@hostel.Description</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/academicyear/edit/@hostel.Id"> Edit </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-danger" href="/academicyear/delete/@hostel.Id"> Delete </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Hostels List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public List<Hostel> AllHostels { get; set; } = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAllAcademicYears();
+    }
+    public async Task LoadAllAcademicYears()
+    {
+        var data = await GeneralService.GetAllAsync<Hostel>();
+
+        if (data is null) return;
+
+        AllHostels.Clear();
+
+        AllHostels.AddRange(data);
+    }
+}

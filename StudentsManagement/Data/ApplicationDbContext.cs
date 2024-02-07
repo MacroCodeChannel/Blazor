@@ -27,8 +27,9 @@ namespace StudentsManagement.Data
         public DbSet<BookIssuance> BookIssuanceHistory { get; set; }
 
         public DbSet<AcademicYear> AcademicYears { get; set; }
-        
 
+        public DbSet<Hostel> Hostels { get; set; }
+        public DbSet<HostelRoom> HostelRooms { get; set; }
         public  DbSet<Grade> Grades { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

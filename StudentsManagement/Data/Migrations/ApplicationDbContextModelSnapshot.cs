@@ -557,6 +557,82 @@ namespace StudentsManagement.Migrations
                     b.ToTable("Grades");
                 });
 
+            modelBuilder.Entity("StudentsManagement.Client.Models.Hostel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HostelName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("HostelTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("HostelTypeId");
+
+                    b.ToTable("Hostels");
+                });
+
+            modelBuilder.Entity("StudentsManagement.Client.Models.HostelRoom", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("CostPerBed")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("HostelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NoOfBeds")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RoomNo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoomTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HostelId");
+
+                    b.HasIndex("RoomTypeId");
+
+                    b.ToTable("HostelRooms");
+                });
+
             modelBuilder.Entity("StudentsManagement.Client.Models.Parent", b =>
                 {
                     b.Property<int>("Id")
@@ -1115,6 +1191,44 @@ namespace StudentsManagement.Migrations
                     b.Navigation("CreatedBy");
 
                     b.Navigation("ModifiedBy");
+                });
+
+            modelBuilder.Entity("StudentsManagement.Client.Models.Hostel", b =>
+                {
+                    b.HasOne("StudentsManagement.Client.Models.ApplicationUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("StudentsManagement.Client.Models.SystemCodeDetail", "HostelType")
+                        .WithMany()
+                        .HasForeignKey("HostelTypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("HostelType");
+                });
+
+            modelBuilder.Entity("StudentsManagement.Client.Models.HostelRoom", b =>
+                {
+                    b.HasOne("StudentsManagement.Client.Models.Hostel", "Hostel")
+                        .WithMany()
+                        .HasForeignKey("HostelId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("StudentsManagement.Client.Models.SystemCodeDetail", "RoomType")
+                        .WithMany()
+                        .HasForeignKey("RoomTypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Hostel");
+
+                    b.Navigation("RoomType");
                 });
 
             modelBuilder.Entity("StudentsManagement.Client.Models.Parent", b =>
