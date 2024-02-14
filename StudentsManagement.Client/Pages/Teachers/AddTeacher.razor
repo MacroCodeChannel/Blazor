@@ -195,7 +195,7 @@
 
             string path = Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode", FileName);
 
-            string relativefilename = Path.Combine("MacroCode", FileName);
+            string relativefilename = FileName;
 
             Directory.CreateDirectory(Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode"));
 

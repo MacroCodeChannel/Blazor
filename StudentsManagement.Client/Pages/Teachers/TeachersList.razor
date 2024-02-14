@@ -1,6 +1,7 @@
 ﻿@page "/teachers-list"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@inject IConfiguration config
 @inject IJSRuntime JsRuntime
 <div class="row">
     <div class="col-12">
@@ -32,6 +33,7 @@
                                                 <th>PhoneNo</th>
                                                 <th>Gender</th>
                                                 <th>Edit</th>
+                                                <th>Details</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -39,6 +41,7 @@
                                             {
                                                 <tr>
                                                     <td>@parent.Id</td>
+                                                    <td><img style="width:100px;height:100px" src="@parent.Photo" /></td>
                                                     <td>@parent.FirstName</td>
                                                     <td>@parent.MiddleName</td>
                                                     <td>@parent.LastName</td>
@@ -47,6 +50,9 @@
                                                     <td>@parent.Gender.Description</td>
                                                     <td>
                                                         <a class="btn btn-success" href="/teacher/edit/@parent.Id"> Edit </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/teacher/details/@parent.Id"> View </a>
                                                     </td>
                                                 </tr>
                                             }
@@ -81,6 +87,7 @@
         if (data is null) return;
         foreach (var item in data)
         {
+            item.Photo = GetImagePath(item.Photo);
             AllTeachers.Add(item);
         }
     }
@@ -94,5 +101,25 @@
     {
         var result = await TeacherService.DeleteAsync(Id);
         await LoadAllTeachers();
+    }
+    private string GetImagePath(string filename)
+    {
+        try
+        {
+
+            var imagestring = "";
+            if (!string.IsNullOrEmpty(filename))
+            {
+                var path = Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode", filename);
+                var imagebytes = File.ReadAllBytes(path);
+                imagestring = Convert.ToBase64String(imagebytes);
+                imagestring = string.Format("data:image/png;base64,{0}", imagestring);
+            }
+            return imagestring;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
     }
 }

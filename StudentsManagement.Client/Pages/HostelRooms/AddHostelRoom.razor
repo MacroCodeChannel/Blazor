@@ -1,0 +1,121 @@
+﻿@page "/add-hostelroom"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization
+@inject UserManager<ApplicationUser> usermanager;
+@attribute [Authorize]
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Add New Hostel Room</h3>
+            </div>
+            <div class="card-body">
+                <EditForm Model="hostelroomobj" OnValidSubmit="CreateHostelRoom" FormName="addhostelroom">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Room No</label>
+                                    <InputText for="RoomNo" class="form-control" @bind-Value="@hostelroomobj.RoomNo" />
+                                    <ValidationMessage For="()=>hostelroomobj.RoomNo" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Cost Per Bed</label>
+                                    <InputNumber for="CostPerBed" class="form-control" @bind-Value="@hostelroomobj.CostPerBed" />
+                                    <ValidationMessage For="()=>hostelroomobj.CostPerBed" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">No of Beds</label>
+                                    <InputNumber for="NoOfBeds" class="form-control" @bind-Value="@hostelroomobj.NoOfBeds" />
+                                    <ValidationMessage For="()=>hostelroomobj.NoOfBeds" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Room Description</label>
+                                    <InputTextArea for="Description" class="form-control" @bind-Value="@hostelroomobj.Description" />
+                                    <ValidationMessage For="()=>hostelroomobj.Description" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Room Type</label>
+                                    <InputSelect for="RoomTypeId" class="form-control" @bind-Value="@hostelroomobj.RoomTypeId">
+                                        <option value="">Select Room Type</option>
+                                        @foreach (var roomtype in RoomTypes)
+                                        {
+                                            <option value="@roomtype.Id">@roomtype.Description</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="()=>hostelroomobj.RoomTypeId" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Hostel Name</label>
+                                    <InputSelect for="HostelId" class="form-control" @bind-Value="@hostelroomobj.HostelId">
+                                        <option value="">Select Hostel</option>
+                                        @foreach (var category in HostelCategories)
+                                        {
+                                            <option value="@category.Id">@category.HostelName</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="()=>hostelroomobj.HostelId" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">Save Room Details</button>
+                            <button type="button" @onclick="()=>Cancel()" class="btn btn-danger">Back to List</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [SupplyParameterFromForm]
+    public HostelRoom hostelroomobj { get; set; } = new();
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    List<Hostel> HostelCategories = new List<Hostel>();
+
+    List<SystemCodeDetail> RoomTypes = new List<SystemCodeDetail>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationStateTask).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentuser = await usermanager.GetUserAsync(user);
+            UserId = currentuser.Id;
+        }
+
+        HostelCategories = await GeneralService.GetAllAsync<Hostel>();
+        RoomTypes = await SystemCodeDetailService.GetByCodeAsync("RoomTypes");
+    }
+
+    protected async Task CreateHostelRoom()
+    {
+        var result = GeneralService.AddAsync<HostelRoom>(hostelroomobj);
+        navigation.NavigateTo("/hostelsrooms-list");
+    }
+    public void Cancel()
+    {
+        navigation.NavigateTo("/hostelsrooms-list");
+    }
+}

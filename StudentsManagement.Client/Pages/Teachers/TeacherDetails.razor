@@ -2,7 +2,7 @@
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
 @inject IJSRuntime JsRuntime
-@rendermode InteractiveServer
+@inject IConfiguration config
 @using Microsoft.AspNetCore.Identity;
 @using Microsoft.AspNetCore.Authorization
 @inject UserManager<ApplicationUser> usermanager;
@@ -19,25 +19,26 @@
                         <DataAnnotationsValidator />
                         <ValidationSummary />
                         <div class="col-md-12">
+                            <image src="@teachobj.Photo" style="width:100px;height:100px"></image>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">First Name</label>
-                                        <InputText  for="FirstName" class="form-control" @bind-Value="@teachobj.FirstName" />
+                                        <InputText disabled="@IsDisabled" for="FirstName" class="form-control" @bind-Value="@teachobj.FirstName" />
                                         <ValidationMessage For="()=>teachobj.FirstName" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Middle Name</label>
-                                        <InputText for="MiddleName" class="form-control" @bind-Value="@teachobj.MiddleName" />
+                                        <InputText disabled="@IsDisabled" for="MiddleName" class="form-control" @bind-Value="@teachobj.MiddleName" />
                                         <ValidationMessage For="()=>teachobj.MiddleName" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Last Name</label>
-                                        <InputText for="LastName" class="form-control" @bind-Value="@teachobj.LastName" />
+                                        <InputText disabled="@IsDisabled" for="LastName" class="form-control" @bind-Value="@teachobj.LastName" />
                                         <ValidationMessage For="()=>teachobj.LastName" />
                                     </div>
                                 </div>
@@ -60,7 +61,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Marital Status</label>
-                                        <InputSelect for="MaritalStatusId" class="form-control" @bind-Value="@teachobj.MaritalStatusId">
+                                        <InputSelect  disabled="@IsDisabled" for="MaritalStatusId" class="form-control" @bind-Value="@teachobj.MaritalStatusId">
                                             <option value="">Select Marital Status</option>
                                             @if (MaritalStatus != null && MaritalStatus.Any())
                                             {
@@ -76,42 +77,42 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Email Address</label>
-                                        <InputText for="EmailAddress" class="form-control" @bind-Value="@teachobj.EmailAddress" />
+                                        <InputText disabled="@IsDisabled" for="EmailAddress" class="form-control" @bind-Value="@teachobj.EmailAddress" />
                                         <ValidationMessage For="()=>teachobj.EmailAddress" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Address</label>
-                                        <InputText for="Address" class="form-control" @bind-Value="@teachobj.Address" />
+                                        <InputText disabled="@IsDisabled" for="Address" class="form-control" @bind-Value="@teachobj.Address" />
                                         <ValidationMessage For="()=>teachobj.Address" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Phone Number</label>
-                                        <InputText for="PhoneNumber" class="form-control" @bind-Value="@teachobj.PhoneNumber" />
+                                        <InputText disabled="@IsDisabled" for="PhoneNumber" class="form-control" @bind-Value="@teachobj.PhoneNumber" />
                                         <ValidationMessage For="()=>teachobj.PhoneNumber" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Facebook Link</label>
-                                        <InputText for="FacebookLink" class="form-control" @bind-Value="@teachobj.FacebookLink" />
+                                        <InputText disabled="@IsDisabled" for="FacebookLink" class="form-control" @bind-Value="@teachobj.FacebookLink" />
                                         <ValidationMessage For="()=>teachobj.FacebookLink" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Twitter Link</label>
-                                        <InputText for="TwitterLink" class="form-control" @bind-Value="@teachobj.TwitterLink" />
+                                        <InputText disabled="@IsDisabled" for="TwitterLink" class="form-control" @bind-Value="@teachobj.TwitterLink" />
                                         <ValidationMessage For="()=>teachobj.TwitterLink" />
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">LinkedIn Link</label>
-                                        <InputText for="LinkedInLink" class="form-control" @bind-Value="@teachobj.LinkedInLink" />
+                                        <InputText disabled="@IsDisabled" for="LinkedInLink" class="form-control" @bind-Value="@teachobj.LinkedInLink" />
                                         <ValidationMessage For="()=>teachobj.LinkedInLink" />
                                     </div>
                                 </div>
@@ -119,7 +120,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Designation</label>
-                                        <InputSelect for="DesignationId" class="form-control" @bind-Value="@teachobj.DesignationId">
+                                        <InputSelect disabled="@IsDisabled" for="DesignationId" class="form-control" @bind-Value="@teachobj.DesignationId">
                                             <option value="">Select Designation</option>
                                             @foreach (var type in Designations)
                                             {
@@ -132,13 +133,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Date of Birth</label>
-                                        <InputDate  for="DOB" class="form-control" @bind-Value="@teachobj.DOB" />
+                                        <InputDate disabled="@IsDisabled" for="DOB" class="form-control" @bind-Value="@teachobj.DOB" />
                                         <ValidationMessage For="()=>teachobj.DOB" />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group mt-4">
-                                <button type="button" @onclick="()=>Cancel()" class="btn btn-danger">Back to List</button>
+                                <a href="/teachers-list"  class="btn btn-danger">Back to List</a>
                             </div>
                         </div>
                     </EditForm>
@@ -158,6 +159,7 @@
 
     List<SystemCodeDetail> MaritalStatus = new List<SystemCodeDetail>();
 
+    public bool IsDisabled { get; set; } = true;
 
     [Parameter]
     public int id { get; set; }
@@ -166,7 +168,6 @@
 
     [CascadingParameter]
     private Task<AuthenticationState> authenticationStateTask { get; set; }
-
 
 
     protected override async Task OnInitializedAsync()
@@ -182,6 +183,10 @@
         Designations = await SystemCodeDetailService.GetByCodeAsync("Designation");
         Gender = await SystemCodeDetailService.GetByCodeAsync("Gender");
         MaritalStatus = await SystemCodeDetailService.GetByCodeAsync("MaritalStatus");
+        teachobj.Photo = Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode", teachobj.Photo);
+        var imagebytes = File.ReadAllBytes(teachobj.Photo);
+        teachobj.Photo = Convert.ToBase64String(imagebytes);
+        teachobj.Photo = string.Format("data:image/png;base64,{0}", teachobj.Photo);
     }
 
     protected async Task UpdateTeacher()
