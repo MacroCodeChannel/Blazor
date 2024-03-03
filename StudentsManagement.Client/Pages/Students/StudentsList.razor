@@ -1,8 +1,10 @@
 ﻿@page "/students-list"
 @using StudentsManagement.Client.Models
+@inject IConfiguration config;
+@attribute [StreamRendering(true)]
 @inject NavigationManager navigation;
 @inject IJSRuntime JsRuntime
-
+@rendermode InteractiveServer
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -26,6 +28,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
+                                                <th>Student Photo</th>
                                                 <th>FirstName</th>
                                                 <th>MiddleName</th>
                                                 <th>LastName</th>
@@ -34,6 +37,7 @@
                                                 <th>Country</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
+                                                <th>View</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -41,6 +45,7 @@
                                             {
                                                 <tr>
                                                     <td>@student.Id</td>
+                                                    <td><img src="@student.Photo" style="width:90px;height:90px" /></td>
                                                     <td>@student.FirstName</td>
                                                     <td>@student.MiddleName</td>
                                                     <td>@student.LastName</td>
@@ -53,15 +58,14 @@
                                                     <td>
                                                         <a class="btn btn-danger" href="/student/delete/@student.Id"> Delete </a>
                                                     </td>
+                                                    <td>
+                                                        <a class="btn btn-primary" href="/student/details/@student.Id"> View </a>
+                                                    </td>
                                                 </tr>
                                             }
                                         </tbody>
                                     </table>
                                 </div>
-                            }
-                            else
-                            {
-                                <div class="alert alert-info"> There is not Students List Availlable</div>
                             }
                         </div>
                     </div>
@@ -76,7 +80,9 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAlLStudents();
+
     }
 
 
@@ -91,9 +97,33 @@
         if (students is null) return;
         foreach (var student in students)
         {
+            student.Photo = GetImagePath(student.Photo);
             AllStudents.Add(student);
         }
     }
+
+    public string GetImagePath(string filename)
+    {
+        try
+        {
+
+            var imagestring = "";
+
+            if (!string.IsNullOrEmpty(filename))
+            {
+                var path = Path.Combine(config.GetValue<String>("FileUploads")!, "Students", filename);
+                var imagebytes = File.ReadAllBytes(path);
+                var imagebase64string = Convert.ToBase64String(imagebytes);
+                imagestring = string.Format("data:image/png;base64,{0}", imagebase64string);
+            }
+
+            return imagestring;
+        }catch(Exception ex)
+        {
+            return null;
+        }
+    }
+
 
     private void EditStudent(int id)
     {

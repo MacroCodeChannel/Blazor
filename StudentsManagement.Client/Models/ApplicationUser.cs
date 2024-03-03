@@ -1,11 +1,15 @@
 ﻿
 using Microsoft.AspNetCore.Identity;
 using StudentsManagement.Client.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentsManagement.Client.Models
 {
     public class ApplicationUser : IdentityUser
     {
+
+       
+        public new string Email { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }

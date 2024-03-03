@@ -1,6 +1,8 @@
 ﻿@page "/systemcodesdetails-list"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
 @inject IJSRuntime JsRuntime
 <div class="row">
     <div class="col-12">

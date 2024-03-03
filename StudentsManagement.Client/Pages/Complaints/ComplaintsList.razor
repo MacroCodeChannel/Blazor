@@ -1,0 +1,86 @@
+﻿@page "/complaints-list"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@inject IJSRuntime JsRuntime
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Complaints List</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <p><a class="btn btn-success float-end" href="/add-complaint">Add New Complaint</a></p>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header"></div>
+                            @if (!AllComplaints.Any())
+                            {
+                                <p><em>Loading  Complaints...</em></p>
+                            }
+                            @if (AllComplaints.Any())
+                            {
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Complaint Type</th>
+                                                <th>Complainant </th>
+                                                <th>Phone Number</th>
+                                                <th>Complaint Date</th>
+                                                <th>Status</th>
+                                                <th>Edit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var department in AllComplaints)
+                                            {
+                                                <tr>
+                                                    <td>@department.Id</td>
+                                                    <td>@department.ComplaintTypeId</td>
+                                                    <td>@department.ComplaintBy</td>
+                                                    <td>@department.PhoneNumber</td>
+                                                    <td>@department.ComplaintDate</td>
+                                                    <td>@department.StatusId</td>
+                                                    <td>
+                                                        <a class="btn btn-success" href="/department/edit/@department.Id"> Edit </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info"> There is no Complaints List Availlable</div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public List<Complaint> AllComplaints { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Delay(500);
+        await LoadAllDepartments();
+    }
+    public async Task LoadAllDepartments()
+    {
+        var data = await GeneralService.GetAllAsync <Complaint>();
+
+        if (data is null) return;
+
+        AllComplaints.Clear();
+        AllComplaints.AddRange(data);
+    }
+}

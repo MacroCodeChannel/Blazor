@@ -32,6 +32,8 @@ namespace StudentsManagement.Data
         public DbSet<HostelRoom> HostelRooms { get; set; }
         public  DbSet<Grade> Grades { get; set; }
 
+        public DbSet<Complaint> Complaints { get; set; }
+        public DbSet<ComplaintNote> ComplaintNotes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))

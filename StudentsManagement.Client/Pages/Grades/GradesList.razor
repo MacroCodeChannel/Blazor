@@ -1,6 +1,7 @@
 ﻿@page "/grades-list"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@attribute [StreamRendering(true)]
 @rendermode InteractiveServer
 @inject IJSRuntime JsRuntime
 <div class="row">
@@ -76,6 +77,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAllGrades();
     }
     public async Task LoadAllGrades()

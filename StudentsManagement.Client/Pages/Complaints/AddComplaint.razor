@@ -1,0 +1,120 @@
+﻿@page "/add-complaint"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization
+@inject UserManager<ApplicationUser> usermanager;
+@attribute [Authorize]
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Add New Complaint</h3>
+            </div>
+            <div class="card-body">
+                <EditForm Model="complaintobj" OnValidSubmit="CreateNewComplaint" FormName="addhostelroom">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Complaint Type</label>
+                                    <InputSelect for="ComplaintTypeId" class="form-control" @bind-Value="@complaintobj.ComplaintTypeId">
+                                        <option value="">Select Complaint Type</option>
+                                        @foreach (var type in ComplaintTypes)
+                                        {
+                                            <option value="@type.Id">@type.Description</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="()=>complaintobj.ComplaintTypeId" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Complaint Source</label>
+                                    <InputSelect for="SourceId" class="form-control" @bind-Value="@complaintobj.SourceId">
+                                        <option value="">Select Complaint Source</option>
+                                        @foreach (var source in ComplaintSource)
+                                        {
+                                            <option value="@source.Id">@source.Description</option>
+                                        }
+                                    </InputSelect>
+                                    <ValidationMessage For="()=>complaintobj.SourceId" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Complainant</label>
+                                    <InputText for="ComplaintBy" class="form-control" @bind-Value="@complaintobj.ComplaintBy" />
+                                    <ValidationMessage For="()=>complaintobj.ComplaintBy" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Phone Number</label>
+                                    <InputText for="PhoneNumber" class="form-control" @bind-Value="@complaintobj.PhoneNumber" />
+                                    <ValidationMessage For="()=>complaintobj.PhoneNumber" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Complaint Date</label>
+                                    <InputDate for="ComplaintDate" class="form-control" @bind-Value="@complaintobj.ComplaintDate" />
+                                    <ValidationMessage For="()=>complaintobj.ComplaintDate" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Complaint Notes</label>
+                                    <InputTextArea for="Description" class="form-control" @bind-Value="@complaintobj.Description" />
+                                    <ValidationMessage For="()=>complaintobj.Description" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">Save Complaint Details</button>
+                            <button type="button" href="/complaints-list" class="btn btn-danger">Back to List</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [SupplyParameterFromForm]
+    public Complaint complaintobj { get; set; } = new();
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    List<SystemCodeDetail> ComplaintTypes = new List<SystemCodeDetail>();
+    List<SystemCodeDetail> ComplaintSource = new List<SystemCodeDetail>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationStateTask).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentuser = await usermanager.GetUserAsync(user);
+            UserId = currentuser.Id;
+        }
+
+        ComplaintTypes = await SystemCodeDetailService.GetByCodeAsync("ComplaintTypes");
+        ComplaintSource = await SystemCodeDetailService.GetByCodeAsync("ComplaintSources");
+        var pendingstatus= await SystemCodeDetailService.GetByStatusCodeAsync("ComplaintStatus","Pending");
+        complaintobj.StatusId = pendingstatus.Id;
+    }
+
+    protected async Task CreateNewComplaint()
+    {
+        complaintobj.CreatedOn = DateTime.Now;
+        complaintobj.CreatedById = UserId;
+        var result = GeneralService.AddAsync<Complaint>(complaintobj);
+        navigation.NavigateTo("/complaints-list");
+    }
+}

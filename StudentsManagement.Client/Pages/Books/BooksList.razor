@@ -2,6 +2,8 @@
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
 @using Microsoft.AspNetCore.Authorization
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
 @attribute [Authorize]
 @inject IJSRuntime JsRuntime
 <div class="row">
@@ -69,6 +71,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAllBooks();
     }
     public async Task LoadAllBooks()

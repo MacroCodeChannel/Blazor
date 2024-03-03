@@ -99,7 +99,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Date of Birth</label>
-                            <InputDate for="DOB" class="form-control" @bind-Value="@studobj.DOB" />
+                            <InputDate for="DOB"  class="form-control" @bind-Value="@studobj.DOB"/>
                             <ValidationMessage For="()=>studobj.DOB" />
                         </div>
                     </div>
@@ -155,7 +155,7 @@
 
             string path = Path.Combine(config.GetValue<String>("FileUploads")!, "Students", filename);
 
-            string relativefilepath = Path.Combine("Students", filename);
+            //string relativefilepath = Path.Combine("Students", filename);
 
             Directory.CreateDirectory(Path.Combine(config.GetValue<String>("FileUploads")!, "Students"));
 
@@ -163,7 +163,7 @@
 
             await file.OpenReadStream().CopyToAsync(filestream);
 
-            return relativefilepath;
+            return filename;
         }
     }
 

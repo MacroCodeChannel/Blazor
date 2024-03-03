@@ -1,6 +1,8 @@
 ﻿@page "/academicyears-list"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
 @inject IJSRuntime JsRuntime
 <div class="row">
     <div class="col-12">
@@ -28,7 +30,6 @@
                                                 <th>Name</th>
                                                 <th>Start Date</th>
                                                 <th>End Date</th>
-                                                <th>Is Running</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
                                                 <th>Active</th>
@@ -42,7 +43,6 @@
                                                     <td>@academic.Name</td>
                                                     <td>@academic.StartDate</td>
                                                     <td>@academic.EndDate</td>
-                                                    <td>@academic.Status.Description</td>
                                                     <td>
                                                         <a class="btn btn-success" href="/academicyear/edit/@academic.Id"> Edit </a>
                                                     </td>
@@ -85,6 +85,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAllAcademicYears();
     }
     public async Task LoadAllAcademicYears()

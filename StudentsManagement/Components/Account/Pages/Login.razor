@@ -21,7 +21,8 @@
             </div>
               <StatusMessage Message="@errorMessage" />
             <EditForm Model="Input" method="post" class="login100-form validate-form" OnValidSubmit="LoginUser" FormName="login">
-          
+          <DataAnnotationsValidator/>
+          <ValidationSummary/>
                 <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                     <span class="label-input100">Username</span>
                     <InputText @bind-Value="Input.Email" class="input100" autocomplete="username" aria-required="true" placeholder="Enter username"/>

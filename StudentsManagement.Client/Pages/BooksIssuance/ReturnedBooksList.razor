@@ -64,12 +64,13 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAllBookIssuanceHistory();
     }
 
     public async Task LoadAllBookIssuanceHistory()
     {
-        var data = await GeneralService.GetAllAsync<BookIssuance>();
+        var data = await IssuanceService.GetAllAsync();
         var returnedbooks = data.Where(x => x.Status.Code == "Returned");
         AllBookReturnHistory.Clear();
 

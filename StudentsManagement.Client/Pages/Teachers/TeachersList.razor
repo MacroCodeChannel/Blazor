@@ -1,6 +1,8 @@
 ﻿@page "/teachers-list"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
 @inject IConfiguration config
 @inject IJSRuntime JsRuntime
 <div class="row">
@@ -26,6 +28,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
+                                                <th>Teacher Photo</th>
                                                 <th>FirstName</th>
                                                 <th>MiddleName</th>
                                                 <th>LastName</th>
@@ -52,7 +55,7 @@
                                                         <a class="btn btn-success" href="/teacher/edit/@parent.Id"> Edit </a>
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-success" href="/teacher/details/@parent.Id"> View </a>
+                                                        <a class="btn btn-primary" href="/teacher/details/@parent.Id"> View </a>
                                                     </td>
                                                 </tr>
                                             }

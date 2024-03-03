@@ -2,6 +2,8 @@
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
 @inject IJSRuntime JsRuntime
+@attribute [StreamRendering(true)]
+@rendermode InteractiveWebAssembly
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -69,6 +71,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAllDepartments();
     }
     public async Task LoadAllDepartments()

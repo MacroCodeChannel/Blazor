@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Z1OfW/Oxw3DKWgXV7gzJjSogyUQxXrF0ZOgRTr7XozA=",
+  "Hash": "DaWF4Gp3VTXhRGwsSR/RslD2FwD6kVOa6n7JBPZszOQ=",
   "Source": "StudentsManagement",
   "BasePath": "_content/StudentsManagement",
   "Mode": "Default",
@@ -147,7 +147,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\dotnet.js"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
@@ -166,15 +166,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\dotnet.js.map"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.js.map"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.0.r1ycb3dqr2.js",
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.qi4rxqsbhh.js",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
       "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.0.r1ycb3dqr2.js",
+      "RelativePath": "_framework/dotnet.native.8.0.2.qi4rxqsbhh.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,7 +185,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\dotnet.native.js"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.js"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
@@ -204,15 +204,15 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.0.sgqh0a0t4q.js",
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.u0in0lqlcc.js",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
       "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.0.sgqh0a0t4q.js",
+      "RelativePath": "_framework/dotnet.runtime.8.0.2.u0in0lqlcc.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -223,7 +223,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
@@ -242,7 +242,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
@@ -261,7 +261,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
@@ -280,7 +280,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
@@ -299,7 +299,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.0\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\obadi\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.2\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.wasm",
@@ -4900,25 +4900,6 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.TraceSource.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\3y1r5su9ek.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
-    },
-    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\41geznm8jk.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -5166,25 +5147,6 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.Tools.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\61vq8yx8vf.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
-    },
-    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\685ng0424v.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -5413,6 +5375,25 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Data.Common.wasm"
     },
     {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\7tcijzmozh.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
+    },
+    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\7viibdzaj7.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -5527,6 +5508,25 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Collections.Specialized.wasm"
     },
     {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\8uhpgtqy14.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
+    },
+    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\8vnm06mn6c.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -5582,6 +5582,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Dynamic.Runtime.wasm"
+    },
+    {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\9ywsvwdrfe.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\a10joewnqh.gz",
@@ -5774,25 +5793,6 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.Primitives.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\bal353wp2u.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
-    },
-    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\baloyeb7gs.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -5888,25 +5888,6 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\btgtfmxdwg.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
-    },
-    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\ckawjhfgdo.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -5962,25 +5943,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Runtime.Serialization.Xml.wasm"
-    },
-    {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\d50cuuvbf3.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\d7wv5dq78o.gz",
@@ -7085,6 +7047,25 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Tasks.wasm"
     },
     {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\ljetxzm3nq.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
+    },
+    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\lmrof3pua3.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -7370,6 +7351,25 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.IO.Compression.FileSystem.wasm"
     },
     {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\ol1l0pbx3t.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
+    },
+    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\ormhkxh8zb.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -7541,25 +7541,6 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Linq.Queryable.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\qb149gv0v0.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
-    },
-    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\qhz0tw9r5o.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -7577,6 +7558,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Sockets.wasm"
+    },
+    {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\qi4rxqsbhh.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.8.0.2.qi4rxqsbhh.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.qi4rxqsbhh.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.2.qi4rxqsbhh.js"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\qm3dwrqxj8.gz",
@@ -7634,25 +7634,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Threading.Timer.wasm"
-    },
-    {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\r1ycb3dqr2.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.0.r1ycb3dqr2.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.0.r1ycb3dqr2.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.0.r1ycb3dqr2.js"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\r498vss1xz.gz",
@@ -7769,25 +7750,6 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.DataAnnotations.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\sgqh0a0t4q.gz",
-      "SourceId": "StudentsManagement.Client",
-      "SourceType": "Project",
-      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.0.sgqh0a0t4q.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.0.sgqh0a0t4q.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.0.sgqh0a0t4q.js"
-    },
-    {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\sjgzwrvjyz.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
@@ -7881,6 +7843,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.wasm"
+    },
+    {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\u0in0lqlcc.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.8.0.2.u0in0lqlcc.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.u0in0lqlcc.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.2.u0in0lqlcc.js"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\u3jgjcbkp3.gz",
@@ -8377,23 +8358,23 @@
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Ping.wasm"
     },
     {
-      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\y013qc30f1.gz",
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\yfrgey7hf2.gz",
       "SourceId": "StudentsManagement.Client",
       "SourceType": "Project",
       "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.gz",
+      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Alternative",
       "AssetMergeBehavior": "",
       "AssetMergeSource": "",
-      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\ygy092nqr9.gz",
@@ -8527,6 +8508,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Console.wasm"
+    },
+    {
+      "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\zld5zh1ucc.gz",
+      "SourceId": "StudentsManagement.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
     },
     {
       "Identity": "D:\\Content Creation\\.NET Core Projects\\StudentsManagement\\StudentsManagement.Client\\obj\\Debug\\net8.0\\compressed\\zr0qkblemh.gz",

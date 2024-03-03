@@ -15,6 +15,7 @@ namespace StudentsManagement.Client.Repository
         Task<SystemCodeDetail> GetByIdAsync(int id);
 
         Task<List<SystemCodeDetail>> GetByCodeAsync(string code);
-        
+        Task<SystemCodeDetail> GetByStatusCodeAsync(string code,string statuscode);
+
     }
 }

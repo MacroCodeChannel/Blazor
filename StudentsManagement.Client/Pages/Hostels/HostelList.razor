@@ -1,6 +1,8 @@
 ﻿@page "/hostels-list"
 @using StudentsManagement.Client.Models
 @inject NavigationManager navigation;
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
 @inject IJSRuntime JsRuntime
 <div class="row">
     <div class="col-12">
@@ -70,6 +72,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAllAcademicYears();
     }
     public async Task LoadAllAcademicYears()

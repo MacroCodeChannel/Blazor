@@ -76,6 +76,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        await Task.Delay(500);
         await LoadAllUsers();
     }
     public async Task LoadAllUsers()

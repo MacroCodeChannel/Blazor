@@ -70,6 +70,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NcRWRpdEJvb2sucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Complaints/AddComplaint.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGxhaW50c1xBZGRDb21wbGFpbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Complaints/ComplaintsList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGxhaW50c1xDb21wbGFpbnRzTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -152,6 +160,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Students/EditStudent.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcRWRpdFN0dWRlbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Students/StudentDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudHNcU3R1ZGVudERldGFpbHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Students/StudentsList.razor]

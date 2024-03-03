@@ -155,9 +155,9 @@ D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\scopedcss\bundle\StudentsManagement.styles.css
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\scopedcss\projectbundle\StudentsManagement.bundle.scp.css
-D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\StudentsManagement.csproj.CopyComplete
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\StudentsManagement.dll
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\refint\StudentsManagement.dll
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\StudentsManagement.pdb
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\StudentsManagement.genruntimeconfig.cache
 D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\ref\StudentsManagement.dll
+D:\Content Creation\.NET Core Projects\StudentsManagement\StudentsManagement\obj\Debug\net8.0\Students.685D3867.Up2Date

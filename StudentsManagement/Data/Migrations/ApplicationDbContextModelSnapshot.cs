@@ -238,6 +238,7 @@ namespace StudentsManagement.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -427,6 +428,100 @@ namespace StudentsManagement.Migrations
                     b.HasIndex("StudentId");
 
                     b.ToTable("BookIssuanceHistory");
+                });
+
+            modelBuilder.Entity("StudentsManagement.Client.Models.Complaint", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ComplaintBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ComplaintDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ComplaintTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ModifiedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SourceId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ComplaintTypeId");
+
+                    b.HasIndex("CreatedById");
+
+                    b.HasIndex("ModifiedById");
+
+                    b.HasIndex("SourceId");
+
+                    b.HasIndex("StatusId");
+
+                    b.ToTable("Complaints");
+                });
+
+            modelBuilder.Entity("StudentsManagement.Client.Models.ComplaintNote", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ActionedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("ActionedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Attachment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ComplaintId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Notes")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActionedById");
+
+                    b.HasIndex("ComplaintId");
+
+                    b.ToTable("ComplaintNotes");
                 });
 
             modelBuilder.Entity("StudentsManagement.Client.Models.Country", b =>
@@ -1137,6 +1232,67 @@ namespace StudentsManagement.Migrations
                     b.Navigation("Status");
 
                     b.Navigation("Student");
+                });
+
+            modelBuilder.Entity("StudentsManagement.Client.Models.Complaint", b =>
+                {
+                    b.HasOne("StudentsManagement.Client.Models.SystemCodeDetail", "ComplaintType")
+                        .WithMany()
+                        .HasForeignKey("ComplaintTypeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("StudentsManagement.Client.Models.ApplicationUser", "CreatedBy")
+                        .WithMany()
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("StudentsManagement.Client.Models.ApplicationUser", "ModifiedBy")
+                        .WithMany()
+                        .HasForeignKey("ModifiedById")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("StudentsManagement.Client.Models.SystemCodeDetail", "Source")
+                        .WithMany()
+                        .HasForeignKey("SourceId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("StudentsManagement.Client.Models.SystemCodeDetail", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ComplaintType");
+
+                    b.Navigation("CreatedBy");
+
+                    b.Navigation("ModifiedBy");
+
+                    b.Navigation("Source");
+
+                    b.Navigation("Status");
+                });
+
+            modelBuilder.Entity("StudentsManagement.Client.Models.ComplaintNote", b =>
+                {
+                    b.HasOne("StudentsManagement.Client.Models.ApplicationUser", "ActionedBy")
+                        .WithMany()
+                        .HasForeignKey("ActionedById")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("StudentsManagement.Client.Models.Complaint", "Complaint")
+                        .WithMany()
+                        .HasForeignKey("ComplaintId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ActionedBy");
+
+                    b.Navigation("Complaint");
                 });
 
             modelBuilder.Entity("StudentsManagement.Client.Models.Country", b =>
