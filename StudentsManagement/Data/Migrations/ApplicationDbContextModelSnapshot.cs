@@ -497,6 +497,9 @@ namespace StudentsManagement.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("ActionStatusId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ActionedById")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
@@ -516,6 +519,8 @@ namespace StudentsManagement.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ActionStatusId");
 
                     b.HasIndex("ActionedById");
 
@@ -1278,6 +1283,12 @@ namespace StudentsManagement.Migrations
 
             modelBuilder.Entity("StudentsManagement.Client.Models.ComplaintNote", b =>
                 {
+                    b.HasOne("StudentsManagement.Client.Models.SystemCodeDetail", "ActionStatus")
+                        .WithMany()
+                        .HasForeignKey("ActionStatusId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("StudentsManagement.Client.Models.ApplicationUser", "ActionedBy")
                         .WithMany()
                         .HasForeignKey("ActionedById")
@@ -1289,6 +1300,8 @@ namespace StudentsManagement.Migrations
                         .HasForeignKey("ComplaintId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("ActionStatus");
 
                     b.Navigation("ActionedBy");
 

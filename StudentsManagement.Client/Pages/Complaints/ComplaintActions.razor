@@ -1,0 +1,128 @@
+﻿@page "/add-complaintaction/{id:int}"
+@using StudentsManagement.Client.Models
+@inject NavigationManager navigation;
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Identity;
+@using Microsoft.AspNetCore.Authorization
+@inject IConfiguration config
+@inject UserManager<ApplicationUser> usermanager;
+@attribute [Authorize]
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Add New Complaint Action</h3>
+            </div>
+            <div class="card-body">
+                <EditForm Model="complaintobj" OnValidSubmit="CreateNewComplaintAction" FormName="addhostelroom">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Complaint Notes</label>
+                                    <InputTextArea for="Notes" class="form-control" @bind-Value="@complaintobj.Notes" />
+                                    <ValidationMessage For="()=>complaintobj.Notes" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Complaint Status</label>
+                                        <InputSelect for="ActionStatusId" class="form-control" @bind-Value="@complaintobj.ActionStatusId">
+                                            <option value="">Select Complaint Status</option>
+                                            @foreach (var source in ComplaintStatus)
+                                            {
+                                                <option value="@source.Id">@source.Description</option>
+                                            }
+                                        </InputSelect>
+                                        <ValidationMessage For="()=>complaintobj.ActionStatusId" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Upload Photo</label>
+                                        <InputFile OnChange="@LoadFileUploads" class="form-control" accept=".png,.jpg,.jpeg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-primary">Save Complaint Details</button>
+                            <button type="button" href="/complaints-list" class="btn btn-danger">Back to List</button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+    [SupplyParameterFromForm]
+    public ComplaintNote complaintobj { get; set; } = new();
+
+    [Parameter]
+    public int id { get; set; }
+
+    public string UserId { get; set; }
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    List<SystemCodeDetail> ComplaintStatus = new List<SystemCodeDetail>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await authenticationStateTask).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            var currentuser = await usermanager.GetUserAsync(user);
+            UserId = currentuser.Id;
+        }
+        ComplaintStatus = await SystemCodeDetailService.GetByCodeAsync("ComplaintStatus");
+    }
+
+    public IBrowserFile? file;
+
+    public string FileName { get; set; }
+
+
+    private async Task LoadFileUploads(InputFileChangeEventArgs ergs)
+    {
+        file = ergs.File;
+    }
+    private async Task<string> CaptureFile()
+    {
+        if (file is null)
+        {
+            return string.Empty;
+        }
+        else
+        {
+            FileName = Path.ChangeExtension(
+            Path.GetRandomFileName(),
+            Path.GetExtension(file.Name));
+
+            string path = Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode", FileName);
+
+            string relativefilename = FileName;
+
+            Directory.CreateDirectory(Path.Combine(config.GetValue<String>("FileUploads")!, "MacroCode"));
+
+            await using FileStream fs = new(path, FileMode.Create);
+            await file.OpenReadStream().CopyToAsync(fs);
+
+            return relativefilename;
+        }
+    }
+
+    protected async Task CreateNewComplaintAction()
+    {
+        complaintobj.ActionedOn = DateTime.Now;
+        complaintobj.ActionedById = UserId;
+        complaintobj.ComplaintId = id;
+        complaintobj.Attachment = await CaptureFile(); ;
+        var result = GeneralService.AddAsync<ComplaintNote>(complaintobj);
+        navigation.NavigateTo("/complaints-list");
+    }
+}

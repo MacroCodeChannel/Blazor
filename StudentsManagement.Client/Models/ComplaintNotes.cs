@@ -10,5 +10,7 @@
         public string ActionedById { get; set; }
         public ApplicationUser ActionedBy { get; set; }
         public DateTime ActionedOn { get; set; }
+        public int ActionStatusId { get; set; }
+        public SystemCodeDetail ActionStatus { get; set; }
     }
 }

@@ -33,20 +33,24 @@
                                                 <th>Complaint Date</th>
                                                 <th>Status</th>
                                                 <th>Edit</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var department in AllComplaints)
+                                            @foreach (var complaint in AllComplaints)
                                             {
                                                 <tr>
-                                                    <td>@department.Id</td>
-                                                    <td>@department.ComplaintTypeId</td>
-                                                    <td>@department.ComplaintBy</td>
-                                                    <td>@department.PhoneNumber</td>
-                                                    <td>@department.ComplaintDate</td>
-                                                    <td>@department.StatusId</td>
+                                                    <td>@complaint.Id</td>
+                                                    <td>@complaint.ComplaintType.Description</td>
+                                                    <td>@complaint.ComplaintBy</td>
+                                                    <td>@complaint.PhoneNumber</td>
+                                                    <td>@complaint.ComplaintDate</td>
+                                                    <td>@complaint.Status.Description</td>
                                                     <td>
-                                                        <a class="btn btn-success" href="/department/edit/@department.Id"> Edit </a>
+                                                        <a class="btn btn-success" href="/department/edit/@complaint.Id"> Edit </a>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-warning" href="/add-complaintaction/@complaint.Id"> Action </a>
                                                     </td>
                                                 </tr>
                                             }
@@ -76,7 +80,7 @@
     }
     public async Task LoadAllDepartments()
     {
-        var data = await GeneralService.GetAllAsync <Complaint>();
+        var data = await DynamicService.GetAllComplaints();
 
         if (data is null) return;
 

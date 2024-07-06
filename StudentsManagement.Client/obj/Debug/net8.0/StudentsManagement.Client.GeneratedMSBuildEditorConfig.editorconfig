@@ -74,6 +74,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGxhaW50c1xBZGRDb21wbGFpbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Complaints/ComplaintActions.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGxhaW50c1xDb21wbGFpbnRBY3Rpb25zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Content Creation/.NET Core Projects/StudentsManagement/StudentsManagement.Client/Pages/Complaints/ComplaintsList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGxhaW50c1xDb21wbGFpbnRzTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

@@ -49,6 +49,7 @@ builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBooksIssuanceRepository, BooksIssuanceRepository>();
+builder.Services.AddScoped<IDynamicRepository, DynamicRepository>();
 builder.Services.AddScoped(typeof(IGenericRepository),typeof(GenericRepository<ApplicationDbContext>));  
 
 builder.Services.AddScoped(http => new HttpClient
